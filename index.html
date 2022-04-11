@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,3 +143,149 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- 네이게이션 바 -->
+    <nav class="navbar fixed">
+            <li class="navbar-container">
+                <ul class="home">Home</ul>
+                <ul class="navbar-etc"><a href="#">Works</a></ul>
+                <ul class="navbar-etc"><a href="#">Profile</a></ul>
+                <ul class="navbar-etc"><a href="#">About</a></ul>
+                <ul class="navbar-hamburger hide"><img src="./IMG/menu-line.png" alt=""></ul>
+            </li>
+    </nav>
+    <!-- 메인 섹션 -->
+<div class="body-container">
+        <div class="main-background">
+            <div class="main-text-container">
+                <h1 id="job">Product Designer</h1>
+                <p class="main-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamusnostrum?</p>
+                <button class="btn">더 알아보기</button>
+            </div>
+            <div class="profile-img"><img src="./IMG/Macbook.png" alt="profile image"></div>
+        </div>
+        
+    <!-- 작업 -->
+        <!-- 무비OTT -->
+        <!-- summary -->
+        <div class="works">
+        <div class="works-title">
+            <p class="big-title">01/04</p>
+            <h1 style="color:white;">콘텐츠 SNS</h1>
+        </div>
+        <div class="movie works-template">
+            <div class="movie-container">
+                <!-- 좌측 텍스트박스 -->
+                <div style="position: sticky;">
+                    <div id="movie-text-box">
+                        <h1>App name</h1>
+                        <h4 class="p-title" id="movie-img-mobile">감상을 공유하는 새로운 방법</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem sed rem tenetur incidunt ea, quo impedit itaque alias nam provident quae sunt voluptatibus ex saepe, error atque? Adipisci, perferendis labore?</p>
+                        <button class="btn">더 알아보기</button>
+                    </div>
+                </div>
+                <!-- 우측 이미지박스 -->
+                <div id="movie-img-box">
+                    <div class="img-1"><img src="./IMG/test.png" alt=""></div>
+                    <div class="temporary-img"></div>
+                </div>
+            </div>
+        </div>
+        <!-- MMCA -->
+        <!-- summary -->
+        <div class="works-title">
+            <p class="big-title">02/04</p>
+            <h1 style="color:white;">국립현대미술관</h1>
+        </div>
+        <div class="mmca works-template">
+                <div class="mmca-top">
+                    <div class="mmca-title">
+                        <h1>App name</h1>
+                        <h4 class="p-title" id="mmca-logo-mobile">국립현대미술관<br>랜딩 페이지 및 전시 페이지 리디자인</h4>
+                    </div>
+                    <div class="mmca-logo">
+                        <!-- <img src="../Portfolio/IMG/MMCA_logo.png" alt=""> -->
+                    </div>
+                </div>
+            <div>
+                    <p id="mmca-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias adipisci aliquid rerum voluptatum ea nisi repellat quo cupiditate saepe autem laboriosam dolore numquam porro asperiores in sapiente iste, repudiandae voluptas?</p>
+                </div>
+                <button class="btn" id="mmca-btn">더 알아보기</button>
+        </div>
+    </div>
+
+    <div style="background-color: black; width: 100vw; height: 500px; position: sticky; top: 0px;" class="works-template"><h1 style="color: white;">밑에는 미완성!</h1></div>
+    
+    <!-- 프로필 -->
+    <div class="profile-background">
+        <div class="">
+        </div>
+    </div>
+</div>
+
+
+
+    <script>
+        var h1 = document.getElementById('job');
+        var 글씨 = document.getElementById('job').innerHTML;
+        var UIUX = ['UIUX-Designer']
+
+         h1.innerHTML = '';
+        for (let i = 0; i < 글씨.length; i++) {
+            setTimeout(() => {
+             h1.innerHTML = h1.innerHTML + 글씨[i]
+         }, i*50);
+                    
+        }
+        // 타이핑 애니메이션
+        
+        $(window).on('mousewheel DOMMouseScroll',function(e){
+
+            if(e.originalEvent.wheelDelta > 0 ||  e.originalEvent.detail < 0){
+                $(".navbar").addClass("fixed");
+            } 
+            
+            else if (e.originalEvent.wheelDelta < 0 ||  e.originalEvent.detail > 0){
+                $(".navbar").removeClass("fixed");
+            }
+            
+        });
+        // navbar 스크롤 이벤트
+
+        if (matchMedia("screen and (max-width: 768px)").matches) { 
+            $('.profile-img').insertAfter('.main-text');
+            $('.img-1').insertAfter('#movie-img-mobile');
+            $('.mmca-logo').insertAfter('#mmca-logo-mobile');
+            $('#mmca-p').insertAfter('.mmca-logo');
+            $('#mmca-btn').insertAfter('#mmca-p');
+            $(".navbar-etc").addClass('hide');
+            $(".navbar-hamburger").removeClass('hide');
+         } else { null }
+        //  JS 반응형
+
+
+
+
+    </script>
+</body>
+</html>
+>>>>>>> 11b02d959b13b3b444f2aa4b72a9b9f94a1c258f
