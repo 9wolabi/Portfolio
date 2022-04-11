@@ -112,7 +112,7 @@
         }
         // 타이핑 애니메이션
         
-        $(window).on('mousewheel DOMMouseScroll',function(e){
+        $(window).on('wheel DOMMouseScroll',function(e){
 
             if(e.originalEvent.wheelDelta > 0 ||  e.originalEvent.detail < 0){
                 $(".navbar").addClass("fixed");
